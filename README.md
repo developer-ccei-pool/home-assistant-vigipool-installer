@@ -41,7 +41,7 @@ address 192.168.1.XX:1883 # Ip address of your vigipool device
 topic # out 0
 topic # in 0
 ```
-Thanks to kefrens for finding this method (https://github.com/developer-ccei-pool/home-assistant-vigipool-installer/issues/3)
+Thanks to [kefrens](https://github.com/kefrens) for finding this method (https://github.com/developer-ccei-pool/home-assistant-vigipool-installer/issues/3)
 
 #### Method 2 : Use Node-Red. 
 - To help you, you can use the following script: https://github.com/developer-ccei-pool/nodered-vigipool-config-generator/blob/main/README.fr.md
