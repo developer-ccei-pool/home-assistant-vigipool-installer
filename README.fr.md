@@ -19,14 +19,35 @@ Liste des équipements Vigipool compatibles avec l'installateur :
 
 ### Home Assisttant MQTT
 
-- Attention ! Home Assistant ne peut pas se connecter à plusieurs serveurs MQTT, cela veut dire que ce script n'est pas utilisable si le produit Vigipool n'est pas le serveur MQTT de Home Assistant (cela est dû à une contrainte des produits Vigipool et pas du script d'installation), une solution pour régler ce problème est d'utiliser Node-Red. Pour vous aider, vous pouvez utiliser le script suivant : https://github.com/developer-ccei-pool/nodered-vigipool-config-generator/blob/main/README.fr.md
-
-- Il faut auparavant avoir déjà configuré le MQTT de Home Assistant avant de lancer l'installeur. Pour cela, voir ce lien : https://www.home-assistant.io/integrations/mqtt/
-
 ### Produit Vigipool
 
 - Avoir un produit Vigipool
 - Utiliser l'application mobile Vigipool pour se connecter au produit Vigipool puis configurer le produit pour le connecter à votre Wi-Fi et connaitre son IP
+- Il faut auparavant avoir déjà configuré le MQTT de Home Assistant avant de lancer l'installeur. Pour cela, voir ce lien : https://www.home-assistant.io/integrations/mqtt/
+
+### En cas de plusieurs serveurs MQTT
+
+Si vous avez plusieurs serveurs MQTT vous devez utiliser l'une de ces deux méthodes
+#### Méthode 1 : Utilisation et configuration du module complémentaire Mosquitto broker
+- Allez dans "Paramètres"
+- Allez dans "Modules complémentaires"
+- Installez ou allez dans "Mosquitto broker"
+- Allez dans "Configuration"
+- Dans le menu "Customize" remplacez "active: false" par "active: true"
+- Dans votre explorateur de fichiers allez dans homeassistant > share > mosquitto
+- créez un fichier nommé "mosquitto.conf"
+- ajoutez le contenu suivant :
+```
+connection bridge-01
+address 192.168.1.XX:1883 # Adresse IP de votre appareil vigipool
+topic # out 0
+topic # in 0
+```
+Merci à kefrens d'avoir trouvé cette méthode (https://github.com/developer-ccei-pool/home-assistant-vigipool-installer/issues/3)
+
+#### Méthode 2 : Utiliser Node-Red.
+- Pour vous aider, vous pouvez utiliser le script suivant : https://github.com/developer-ccei-pool/nodered-vigipool-config-generator/blob/main/README.fr.md
+
 
 ## Configuration
 

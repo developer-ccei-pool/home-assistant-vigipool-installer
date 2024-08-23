@@ -17,16 +17,36 @@ List of Vigipool devices compatible with the installer:
 
 ## Prerequisites
 
-### Home Assistant MQTT
-
-- Warning ! Home Assistant cannot connect to multiple MQTT servers, this means that this script cannot be used if the Vigipool product is not the Home Assistant MQTT server (this is due to a constraint of the Vigipool products and not of the installation script), a solution to this problem is to use Node-Red. To help you, you can use the following script: https://github.com/developer-ccei-pool/nodered-vigipool-config-generator/blob/main/README.md
-
-- You must first have already configured the Home Assistant MQTT before launching the installer. To do this, see this link: https://www.home-assistant.io/integrations/mqtt/
-
 ### Vigipool product
 
 - Have a Vigipool product
 - Use the Vigipool mobile application to connect to the Vigipool product then configure the product to connect it to your Wi-Fi and know its IP
+- You must first have already configured the Home Assistant MQTT before launching the installer. To do this, see this link: https://www.home-assistant.io/integrations/mqtt/
+
+### In case of multiple MQTT Server
+
+If you have multiple MQTT servers you must use one of these two methods
+#### Method 1 : Using and configuring the Mosquitto broker Addon
+- Go to "Settings"
+- Go to "Add-ons"
+- Install or go to "Mosquitto broker"
+- go to "Configuration"
+- In the "Customize" menu replace "active: false" with "active: true"
+- In your file explorer go into homeassistant > share > mosquitto
+- create a file nammed "mosquitto.conf"
+- add the following content : 
+```
+connection bridge-01
+address 192.168.1.XX:1883 # Ip address of your vigipool device
+topic # out 0
+topic # in 0
+```
+Thanks to kefrens for finding this method (https://github.com/developer-ccei-pool/home-assistant-vigipool-installer/issues/3)
+
+#### Method 2 : Use Node-Red. 
+- To help you, you can use the following script: https://github.com/developer-ccei-pool/nodered-vigipool-config-generator/blob/main/README.fr.md
+
+
 
 ## Configuration
 
