@@ -32,9 +32,11 @@ If you have multiple MQTT servers you must use one of these two methods
 - Install or go to "Mosquitto broker"
 - go to "Configuration"
 - In the "Customize" menu replace "active: false" with "active: true"
+![360343759-1692ca17-6a77-48a0-bc06-ab6bb17c9f72](https://github.com/user-attachments/assets/34d136db-16d2-42d4-966d-f4ade2ccab69)
 - In your file explorer go into homeassistant > share > mosquitto
 - create a file nammed "mosquitto.conf"
-- add the following content : 
+![360356457-d4b8bd50-04d4-445d-90ea-2d7fc3b51bcd](https://github.com/user-attachments/assets/6e31a244-1172-4698-b541-0610e1e9b804)
+- add the following content in the file : 
 ```
 connection bridge-01
 address 192.168.1.XX:1883 # Ip address of your vigipool device
