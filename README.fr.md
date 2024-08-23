@@ -17,8 +17,6 @@ Liste des équipements Vigipool compatibles avec l'installateur :
 
 ## Prérequis
 
-### Home Assisttant MQTT
-
 ### Produit Vigipool
 
 - Avoir un produit Vigipool
@@ -28,14 +26,17 @@ Liste des équipements Vigipool compatibles avec l'installateur :
 ### En cas de plusieurs serveurs MQTT
 
 Si vous avez plusieurs serveurs MQTT vous devez utiliser l'une de ces deux méthodes
+
 #### Méthode 1 : Utilisation et configuration du module complémentaire Mosquitto broker
 - Allez dans "Paramètres"
 - Allez dans "Modules complémentaires"
 - Installez ou allez dans "Mosquitto broker"
 - Allez dans "Configuration"
 - Dans le menu "Customize" remplacez "active: false" par "active: true"
+![360343759-1692ca17-6a77-48a0-bc06-ab6bb17c9f72](https://github.com/user-attachments/assets/34d136db-16d2-42d4-966d-f4ade2ccab69)
 - Dans votre explorateur de fichiers allez dans homeassistant > share > mosquitto
 - créez un fichier nommé "mosquitto.conf"
+![360356457-d4b8bd50-04d4-445d-90ea-2d7fc3b51bcd](https://github.com/user-attachments/assets/6e31a244-1172-4698-b541-0610e1e9b804)
 - ajoutez le contenu suivant :
 ```
 connection bridge-01
