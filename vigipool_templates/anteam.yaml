@@ -35,6 +35,16 @@
 #         name: AnteaM
 #         identifiers: AnteaM
 
+## Température
+
+- sensor:
+    name: Discharge Temperature
+    state_topic: "anteam_XXXXXXXXXXXX/u16_r/value_temp/value/reported"
+    unique_id: anteam_XXXXXXXXXXXX.value_temp
+    unit_of_measurement: "°C"
+    value_template: |-
+          {{ value }}
+
 ## Light
 ### Sensor
 # - sensor:

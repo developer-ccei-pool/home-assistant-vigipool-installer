@@ -521,6 +521,7 @@ if [[ $text_lang == "fr" ]]; then
     replace_name "Injecting Product" "Produit Injecté"
     replace_name "Total volume injected" "Volume total injecté"
     replace_name "Serial Number" "Numéro de série"
+    replace_name "Discharge Temperature" "Température Refoulement"
     replace_name "pH Setpoint" "Consigne pH"
     replace_name "Max volume injected in 24 hours" "Volume max injecté en 24 heures"
     replace_name "Container volume" "Volume du conteneur"
