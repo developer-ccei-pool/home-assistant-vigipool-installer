@@ -28,6 +28,7 @@ Liste des équipements Vigipool compatibles avec l'installateur :
 Si vous avez plusieurs serveurs MQTT vous devez utiliser l'une de ces deux méthodes
 
 #### Méthode 1 : Utilisation et configuration du module complémentaire Mosquitto broker
+Attention pour faire cette méthode, il va falloir certainement complètement redémarrer les produits Vigipool
 - Allez dans "Paramètres"
 - Allez dans "Modules complémentaires"
 - Installez ou allez dans "Mosquitto broker"
