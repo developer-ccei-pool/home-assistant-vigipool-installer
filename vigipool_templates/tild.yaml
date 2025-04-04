@@ -43,6 +43,8 @@
         {% else %}
             {{ float(value) * 0.1 }}
         {% endif %}
+    state_class: measurement
+    device_class: temperature
     device:
         configuration_url: https://www.ccei-pool.com/fr/produit/tild-vp
         manufacturer: CCEI
